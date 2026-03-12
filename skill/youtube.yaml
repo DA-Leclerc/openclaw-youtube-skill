@@ -1,0 +1,18 @@
+name: youtube
+version: 1.0.0
+description: Fetch and parse YouTube video transcripts with metadata.
+executor: python3
+entry: skills/youtube.py
+python_deps:
+  - youtube-transcript-api
+  - yt-dlp
+config_file: config/youtube.conf
+inputs:
+  url:
+    type: string
+    required: true
+  format:
+    type: string
+    default: clean
+    enum: [clean, raw, timestamped]
+tags: [research, transcript, youtube]
